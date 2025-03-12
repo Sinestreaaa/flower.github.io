@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untukmu dariku</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        * {
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #ffa6d1, #b28dff);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .atas,
+        .content {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+        }
+
+        .atas.active,
+        .content.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .atas {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .atas img {
+            width: 120px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+        }
+
+        .atas h2 {
+            font-size: 1.4em;
+            color: #fff;
+            padding: 8px 20px;
+            background: #383838;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .content {
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .content p {
+            font-size: 1em;
+            font-weight: bold;
+            color: #383838;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            background: #f9f9f9;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content p i {
+            color: #ff4081;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Div kedua (atas) -->
+    <div class="atas" id="atasDiv">
+        <img src="https://dekatutorial.github.io/v/spesial/ultah%20stiker.gif" alt="Sticker">
+        <h2>Scroll kebawah ya Mitt</h2>
+    </div>
+
+    <!-- Konten utama -->
+    <div class="content" id="contentDiv">
+        <p data-aos="zoom-in">Selamat ulang tahun, Bunga! 🌹</p>
+        <p data-aos="zoom-in">dan aku ingin melukisnya dengan senyum indahmu💎</p>
+        <p data-aos="zoom-in">Seperti mentari pagi yang menyapa lembut dedaunan</p>
+        <p data-aos="zoom-in">kehadiranmu selalu membawa hangat dan cerah 🔴🟠🟡🟢🔵🟣</p>
+        <p data-aos="zoom-in">tumbuh seperti bunga yang tak henti mekar 🌹🌹🌹🌹</p>
+        <p data-aos="zoom-in">Semoga setiap langkahmu penuh warna 🔴🟠🟡🟢🔵🟣</p>
+        <p data-aos="zoom-in">seperti pelangi yang datang setelah hujan 🌈🌻✨😊❤</p>
+        <p data-aos="zoom-in">Tetaplah menjadi bintang di langit gelap ⭐⭐⭐</p>
+        <p data-aos="zoom-in">Selamat ulang tahun 💖</p>
+        <p data-aos="zoom-in">- Wahai bunga warna navy milikku -</p>
+        <p data-aos="zoom-in" id="openButton">Tekan lovenya ya 🤍 </p>
+        <p data-aos="zoom-in">- 🔴🟠🟡🟢🔵🟣-</p>
+    </div>
+
+    <script>
+        window.onload = function () {
+            if (!sessionStorage.getItem('reloaded')) {
+                sessionStorage.setItem('reloaded', true);
+                location.reload();
+            } else {
+                sessionStorage.removeItem('reloaded');
+            }
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+            AOS.init({
+                once: true
+            });
+
+            const atasDiv = document.getElementById('atasDiv');
+            const contentDiv = document.getElementById('contentDiv');
+
+            // Tampilkan div "atas" dan "content" setelah delay
+            setTimeout(() => {
+                atasDiv.classList.add('active');
+                contentDiv.classList.add('active');
+            }, 1000);
+            openButton.addEventListener('click', () => {
+                // Navigasi ke halaman berikutnya
+                window.location.href = "flower.html";
+            });
+        }
+        );
+    </script>
+</body>
+
+</html>
